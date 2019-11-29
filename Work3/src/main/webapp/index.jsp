@@ -72,6 +72,24 @@
 					<td><input type="submit" id=submit name=save class="button"
 						value="Send Tweet" /></td>
 				</form>
+				<!-- TEST FUNCTION to send a tweet as a friend -->
+				<form id="storegae" action="GaeStore" method="get" name="storegae">
+					<td>
+					<textarea id="text_content" name="text_content"
+							class="textarea" placeholder="Enter FRIENDMODE Tweet Message....."></textarea>
+					</td> 
+						<input type=hidden id=user_id value="friend2all" />
+					 	<input type=hidden	id=first_name value="Mr." /> 
+						<input type=hidden id=last_name	value="Rogers" /> 
+						<input type=hidden id=picture name=picture />
+					<script>
+						console.log(document.getElementById("first_name") + " "
+								+ document.getElementById("last_name") + " "
+								+ document.getElementById("picture"));
+					</script>
+					<td><input type="submit" id=submit name=save class="button"
+						value="Send Tweet AS A FRIEND" /></td>
+				</form>
 			</tr>
 
 			<tr>

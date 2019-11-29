@@ -16,8 +16,8 @@
 <head>
 <link rel="stylesheet" href="/css/tweet.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<h1><u>Friendstweet Application</u></h1>
+<title>Friend's Tweets</title>
+<h1><u>Friend's Tweets</u></h1>
 </head>
 <body>
 <div class="topnav">
@@ -40,14 +40,22 @@
 	PreparedQuery pq = ds.prepare(q);
 	int count=0;
 	for (Entity result : pq.asIterable()) {
-			  //out.println(result.getProperty("first_name")+" "+request.getParameter("name"));
-			  String first_name = (String) result.getProperty("first_name");
-			  String lastName = (String) result.getProperty("last_name");
-			  String picture = (String) result.getProperty("picture");
-			  String status = (String) result.getProperty("status");
-			  Long id = (Long) result.getKey().getId();
-			  String time = (String) result.getProperty("timestamp");
-			  Long visited_count = (Long)((result.getProperty("visited_count"))); %>
+			  //Get all tweets that are NOT from the User
+			  //We will consider those as "friends"
+			  //String my_userId = getCookie("user_id");
+			  
+			  //if(my_userId != result.getProperty("user_id")){
+				  //out.println(result.getProperty("first_name")+" "+request.getParameter("name"));
+				  String first_name = (String) result.getProperty("first_name");
+				  String lastName = (String) result.getProperty("last_name");
+				  String picture = (String) result.getProperty("picture");
+				  String status = (String) result.getProperty("status");
+				  Long id = (Long) result.getKey().getId();
+				  String time = (String) result.getProperty("timestamp");
+				  Long visited_count = (Long)((result.getProperty("visited_count")));
+				  
+			  //}
+%>
 			  <table >
 			  <tbody>
 			  <tr><div style="height: 50px; width: 50px position: relative"><%=picture %></div></tr>
