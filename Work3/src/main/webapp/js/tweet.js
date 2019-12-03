@@ -5,7 +5,7 @@ var picture;
 function callme(){
 window.fbAsyncInit = function() {
     FB.init({
-      appId      : '560544894491192',
+      appId      : '474074836555385',
       cookie     : true,
       xfbml      : true,
       version    : 'v2.9'
@@ -88,8 +88,8 @@ function shareTweet(){
 function shareDirectTweet(){
 	checkLoginState();
 	FB.ui({method: 'share',
-		href: "https://apps.facebook.com/560544894491192",
-		quote: "https://apps.facebook.com/560544894491192",
+		href: "https://apps.facebook.com/474074836555385",
+		quote: "https://apps.facebook.com/474074836555385",
 		},function(response){
 		if (!response || response.error)
 		{
@@ -160,7 +160,7 @@ function sendDirectMsg(){
 		//href: "https://apps.facebook.com/474074836555385",
 		//quote: "https://apps.facebook.com/474074836555385",
 		//link:'Test Message'
-		link:'https://apps.facebook.com/560544894491192' });
+		link:'https://apps.facebook.com/474074836555385' });
 };
 
 

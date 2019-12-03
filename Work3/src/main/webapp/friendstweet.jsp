@@ -19,14 +19,15 @@
 <title>Friend's Tweets</title>
 <h1><u>Friend's Tweets</u></h1>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153614967-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153799107-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-153614967-1');
+  gtag('config', 'UA-153799107-1');
 </script>
+
 </head>
 <body>
 <div class="topnav">
@@ -60,7 +61,7 @@
 				  String picture = (String) result.getProperty("picture");
 				  String status = (String) result.getProperty("status");
 				  Long id = (Long) result.getKey().getId();
-				  String time = (String) result.getProperty("timestamp");
+				 // String time = (String) result.getProperty("timestamp");
 				  Long visited_count = (Long)((result.getProperty("visited_count")));
 				  
 			  //}
@@ -70,7 +71,6 @@
 			  <tr><div style="height: 50px; width: 50px position: relative"><%=picture %></div></tr>
 			  <tr><br><br><br>User: <%= first_name %> <%= lastName %> </tr>
 			  <br><tr>Status: <%= status %> </tr>
-			  <br><tr>Posted Date: <%= time %> </tr>
 			 <br> <tr>Visited#: <%= visited_count %></tr><br><br>
 			 </tbody>
 			  </table>

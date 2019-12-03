@@ -19,13 +19,13 @@
 <title>Top Tweets</title>
 <h1>TOP 10 TWEETS IN MY APPLICATION!</h1>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153614967-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153799107-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-153614967-1');
+  gtag('config', 'UA-153799107-1');
 </script>
 
 </head>
@@ -58,11 +58,9 @@
 			  String first_name = (String) result.getProperty("first_name");
 			  String lastName = (String) result.getProperty("last_name");
 			  String picture = (String) result.getProperty("picture");
-			  System.out.println("Picture is:");
-			  System.out.println(picture);
 			  String status = (String) result.getProperty("status");
 			  Long id = (Long) result.getKey().getId();
-			  String time = (String) result.getProperty("timestamp");
+			  //String time = (String) result.getProperty("timestamp");
 			  Long visited_count = (Long)((result.getProperty("visited_count")));
 %>
 			  
@@ -70,7 +68,6 @@
 			  <tr><td><div style="height: 50px; width:50px; position: relative"> <%= picture %></div><td>
 			  <td>User: <%= first_name+" "+lastName %> </td></tr>
 			  <tr><td><br><br><br><br><br>Status: <%= status %></td></tr>
-			  <tr><td>Posted at: <%=time %></td></tr>
 			  <tr><td>#Visited: <%= visited_count %></td></tr>
 			  </table>
 			  <br><br>
