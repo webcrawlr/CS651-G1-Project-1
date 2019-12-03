@@ -24,6 +24,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Enter title here</title>
 <h1><center>My Tweet!!!!!</center></h1>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153614967-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153614967-1');
+</script>
+
 </head>
 <body>
 	<div class="topnav">
@@ -74,6 +84,7 @@
 	<tr>
 		<td><div style="height: 100px; width: 100px">
 				<%=picture%></div>
+				
 		<td>
 		<td>User: <%=first_name + " " + lastName%>
 		</td>

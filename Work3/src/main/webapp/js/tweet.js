@@ -5,7 +5,7 @@ var picture;
 function callme(){
 window.fbAsyncInit = function() {
     FB.init({
-      appId      : '474074836555385',
+      appId      : '560544894491192',
       cookie     : true,
       xfbml      : true,
       version    : 'v2.9'
@@ -88,8 +88,8 @@ function shareTweet(){
 function shareDirectTweet(){
 	checkLoginState();
 	FB.ui({method: 'share',
-		href: "https://apps.facebook.com/474074836555385",
-		quote: "https://apps.facebook.com/474074836555385",
+		href: "https://apps.facebook.com/560544894491192",
+		quote: "https://apps.facebook.com/560544894491192",
 		},function(response){
 		if (!response || response.error)
 		{
@@ -104,16 +104,19 @@ function shareDirectTweet(){
 function extractInfo(){
 	FB.api('/me', 
 			'GET',
-			{"fields":"id,first_name,last_name"},
+			{"fields":"id,first_name,last_name,picture.width(100).height(100)"},
 			function(response){
 				first_name = response.first_name;
 				console.log(response);
 				 document.cookie="user_id="+response.id;
 				last_name = response.last_name;
+				picture = "<img src='" +response.picture.data.url + "'>";				
 				document.cookie="first_name="+first_name;
 				localStorage.setItem('first_name',first_name);
 				document.cookie="last_name="+last_name;
 				localStorage.setItem('last_name',last_name);
+				document.cookie="picture="+picture;
+				localStorage.setItem('picture',picture);
 				console.log(document.cookie);
 				//console.log('checking console log at 117');
 			});
@@ -123,20 +126,20 @@ function extractInfo(){
 			  {"height":"100"},
 			  function(response) {
 			      // Insert your code here
-				  //picture = "<img src='" + response.data.url + "'>";
-				  //document.cookie="picture="+picture;
-				//localStorage.setItem('picture',picture);
+				picture = "<img src='" + response.picture.data.url + "'>";
+				 document.cookie="picture="+picture;
+				slocalStorage.setItem('picture',picture);
 			  }
 			);
 	 document.getElementById("user_ids").value    = getCookie('user_id');
 	document.getElementById("user_id").value    = getCookie('user_id');
 	document.getElementById("first_name").value = getCookie('first_name');
 	document.getElementById("last_name").value  = getCookie('last_name');
-	//document.getElementById("picture").value    = getCookie('picture');
+	document.getElementById("picture").value    = getCookie('picture');
 	document.getElementById("toptweet").href   ="toptweet.jsp?id="+localStorage.getItem("first_name");
 	console.log(document.getElementById("first_name").value);
 	console.log(document.getElementById("last_name").value);
-	//console.log(document.getElementById("picture").value);
+	console.log(document.getElementById("picture").value);
 };
 
 
@@ -157,7 +160,7 @@ function sendDirectMsg(){
 		//href: "https://apps.facebook.com/474074836555385",
 		//quote: "https://apps.facebook.com/474074836555385",
 		//link:'Test Message'
-		link:'https://apps.facebook.com/474074836555385' });
+		link:'https://apps.facebook.com/560544894491192' });
 };
 
 
